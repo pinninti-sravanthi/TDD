@@ -7,7 +7,7 @@ Why testing codes is so important?
 - Reliable results
 
 
-What is TDD ?
+What is TDD buzzword about?
  
 > Test-driven development (TDD) is a software development process that relies on the repetition of a very short development cycle: first the developer writes an (initially failing) automated test case that defines a desired improvement or new function, then produces the minimum amount of code to pass that test, and finally refactors the new code to acceptable standards.
 
@@ -118,8 +118,7 @@ How to start fixing our Legacy codes to make it testable?
     - Code Coverage
     
     ![code_coverage_1](http://images.sb.a-cti.com/testing/images/code_coverage_1.png)
-    ![code_coverage_2](http://images.sb.a-cti.com/testing/images/code_coverage_2.png)
-    ![code_coverage_3](http://images.sb.a-cti.com/testing/images/code_coverage_3.png)
+
 
 Document Object Model (DOM):
 ```html
@@ -239,46 +238,71 @@ module.exports = { printHelloWorld: printHelloWorld }
 ajax.spec.js
 
 it('Fetch and Append HelloWorld in DOM ', function( done ){
-   printHelloWorld()
-      .then(() => {
-          expect($('#welcomePage').text()).toBe('Hello World');
-          done();
-      });
+	printHelloWorld()
+		.then(() => {
+		  expect($('#welcomePage').text()).toBe('Hello World');
+		  done();
+		});
   });
+
+it('Fetch and Append HelloWorld in DOM ', async function(){
+	try {
+	    await printHelloWorld();
+	    let input = $('#welcomePage').text();
+	    let expected = 'Hello World';
+	    expect(input).toBe(expected);
+	}
+	catch(e){
+	    throw e;
+	}
+});
 ```
 
 Types of Testing :
-	- Unit Testing = Independent unit of codes, known input and expected output
-	- Integration Testing 
-		- Interacting with DB
-		- Interacting with a microservice ( two or more ) and how they behave or work together
-	- Functional Testing
-		- They only verify the output of an action
-		- Not only interacting but checks the output from DB, is it the expected result.
-		 The difference is that an integration test may simply verify that you can query the database while a functional test would expect to get a specific value from the database
-	- E2E
-		- User behavior with the software in a complete application environment.
-		- can be hard to maintain when they're automated
-		- It is recommended to have a few key end-to-end tests 
-		- Rely more on lower level types of testing (unit and integration tests) to be able to quickly identify breaking changes.
-		ex: 
-			=> logging-in (easy)
-			=> email-notification (medium)
-			=> payments(hard)
-	- Goal:
-		- when bad data or unexpected actions are performed
-		- what would happen when a user makes a typo, tries to save an incomplete form or uses the wrong API
-		- compromise data, get access to a resource they're not supposed to. 
-		- A good testing suite should try to break your app and help understand its limit.
+
+- Unit Testing = Independent unit of codes, known input and expected output
+- Integration Testing 
+	- Interacting with DB
+	- Interacting with a microservice ( two or more ) and how they behave or work together
+- Functional Testing
+	- They only verify the output of an action
+	- Not only interacting but checks the output from DB, is it the expected result.
+	- The difference is that an integration test may simply verify that you can query the database while a functional test would expect to get a specific value from the database
+- End2End
+	- User behavior with the software in a complete application environment.
+	- can be hard to maintain when they're automated
+	- It is recommended to have a few key end-to-end tests 
+	- Rely more on lower level types of testing (unit and integration tests) to be able to quickly identify breaking changes.
+```
+ex: 
+	- logging-in (easy)
+	- email-notification (medium)
+	- payments(hard)
+```
+- Goal:
+	- when bad data or unexpected actions are performed
+	- what would happen when a user makes a typo, tries to save an incomplete form or uses the wrong API
+	- compromise data, get access to a resource they're not supposed to. 
+	- A good testing suite should try to break your app and help understand its limit.
 
 
 Code Coverage:
 	 
-	- Statements : Each induvijual statements/line being called or executed.
-	- Branch
-		- Code block and execution paths
-		- When testing “if” statements, “true” and “false” outcomes must be covered
-		- If only one of these paths has been tested, it is considered as “partial” coverage.
-		- https://eslint.org/docs/developer-guide/code-path-analysis
-	- condition/decision coverage
+- Statements : Each induvijual statements/line being called or executed.
+- Branch
+	- Code block and execution paths
+	- When testing “if” statements, “true” and “false” outcomes must be covered
+	- If only one of these paths has been tested, it is considered as “partial” coverage.
+	- https://eslint.org/docs/developer-guide/code-path-analysis
+	
+    ![code_coverage_2](http://images.sb.a-cti.com/testing/images/code_coverage_2.png)
+    ![code_coverage_3](http://images.sb.a-cti.com/testing/images/code_coverage_3.png)
 
+
+### Further Reading :
+
+- [Red-Green-Refactor](https://www.codecademy.com/articles/tdd-red-green-refactor)
+- [TDD](https://blog.cleancoder.com/uncle-bob/2014/12/17/TheCyclesOfTDD.html)
+- [Types of Testing](https://www.atlassian.com/continuous-delivery/different-types-of-software-testing)
+- [Code Coverage](https://www.atlassian.com/continuous-delivery/introduction-to-code-coverage)
+- [Babel-yarn-webpack](https://medium.com/front-end-hacking/what-are-npm-yarn-babel-and-webpack-and-how-to-properly-use-them-d835a758f987)
