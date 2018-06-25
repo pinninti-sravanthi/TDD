@@ -34,8 +34,7 @@ Testing Framework of choice:
  - Additional support for plugins for transpiling or using latest ES.Next features.
  
 How to start fixing our Legacy codes to make it testable?
- - IIFE
- ```javascript
+ - IIFE ```javascript
   (function(){
     ... local scope
     ... closure and self contained
