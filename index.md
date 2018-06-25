@@ -34,7 +34,8 @@ Testing Framework of choice:
  - Additional support for plugins for transpiling or using latest ES.Next features.
  
 How to start fixing our Legacy codes to make it testable?
- - IIFE ```javascript
+ - IIFE 
+ ```javascript
   (function(){
     ... local scope
     ... closure and self contained
@@ -54,7 +55,8 @@ How to start fixing our Legacy codes to make it testable?
     }
 
   })()
- ```
+  ```
+  
  - Not-modular codes `import` or `require` in some other files.
  - Global declared and available in `window` root object.
  - Tighly coupled instead try using [PubSub Pattern](http://amplifyjs.com/api/pubsub/)
