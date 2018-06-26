@@ -306,3 +306,4 @@ Code Coverage:
 - [Types of Testing](https://www.atlassian.com/continuous-delivery/different-types-of-software-testing)
 - [Code Coverage](https://www.atlassian.com/continuous-delivery/introduction-to-code-coverage)
 - [Babel-yarn-webpack](https://medium.com/front-end-hacking/what-are-npm-yarn-babel-and-webpack-and-how-to-properly-use-them-d835a758f987)
+- [Puppetteer](https://www.valentinog.com/blog/ui-testing-jest-puppetteer/)
