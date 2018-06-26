@@ -279,14 +279,22 @@ ex:
 	- email-notification (medium)
 	- payments(hard)
 ```
-- Goal:
-	- when bad data or unexpected actions are performed
-	- what would happen when a user makes a typo, tries to save an incomplete form or uses the wrong API
-	- compromise data, get access to a resource they're not supposed to. 
-	- A good testing suite should try to break your app and help understand its limit.
 
 
-Code Coverage:
+### Goal:
+- when bad data or unexpected actions are performed
+- what would happen when a user makes a typo, tries to save an incomplete form or uses the wrong API
+- compromise data, get access to a resource they're not supposed to. 
+- A good testing suite should try to break your app and help understand its limit.
+
+
+### Takeaway
+- Modularize code
+- Test case first before production code
+- Start with smaller pre-existing implementation functionality (or) newer implementation.
+- Implement E2E for only few key tests.
+
+### Code Coverage:
 	 
 - Statements : Each induvijual statements/line being called or executed.
 - Branch
