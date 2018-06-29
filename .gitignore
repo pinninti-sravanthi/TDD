@@ -79,3 +79,4 @@ code_coverage
 mochawesome-report
 WEB-INF
 __test__/puppeteer/
+out
