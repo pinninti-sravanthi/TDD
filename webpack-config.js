@@ -53,8 +53,24 @@ let browserConfig = {
   resolve: {
     extensions: [".js", ".jsx", ".css", ".ts", ".tsx"]
   },
+  optimization: {
+    runtimeChunk: false,
+    splitChunks: {
+      cacheGroups: {
+        default: false,
+        commons: {
+          test: /[\\/]node_modules[\\/]/,
+          name: 'vendor_app',
+          chunks: 'all',
+          minChunks: 2
+        }
+      }
+    }
+  },
   plugins: [
-    new BundleAnalyzerPlugin(),
+    new BundleAnalyzerPlugin({
+        analyzerMode: 'static'
+    }),
     new HardSourceWebpackPlugin({}),
     new webpack.ProvidePlugin({
       $: 'jquery',
