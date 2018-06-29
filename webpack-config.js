@@ -2,6 +2,7 @@ const fs = require('fs')
 const path = require("path");
 const HardSourceWebpackPlugin = require('hard-source-webpack-plugin');
 const nodeExternals = require('webpack-node-externals');
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const webpack = require('webpack');
 
 /**
@@ -53,6 +54,7 @@ let browserConfig = {
     extensions: [".js", ".jsx", ".css", ".ts", ".tsx"]
   },
   plugins: [
+    new BundleAnalyzerPlugin(),
     new HardSourceWebpackPlugin({}),
     new webpack.ProvidePlugin({
       $: 'jquery',
