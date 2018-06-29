@@ -22,7 +22,7 @@ describe('Ajax calls and mock test ', function(){
             });
     });
 
-    it.only('fetch manipulate DOM ', function(done){
+    it('fetch manipulate DOM ', function(done){
         printHelloWorld()
             .then(() => {
                 expect($('#welcomePage').text()).toBe('Hello World');
@@ -47,7 +47,7 @@ describe('Ajax calls and mock test ', function(){
     it('AJAX mannual mock, mockedHelloWorld()', function(done) {
         // This is mannual mock
         // mannualMock: https://facebook.github.io/jest/docs/en/mock-function-api#mockfnmockimplementationfn
-        mockedHelloWorld = jest.fn().mockImplementation( () => {
+        let mockedHelloWorld = jest.fn().mockImplementation( () => {
             return new Promise((resolve) => {
                 resolve({
                     args:{

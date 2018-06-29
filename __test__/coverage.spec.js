@@ -5,6 +5,6 @@ test('100 divisible by 10, to equal true', () => {
 });
 
 // Branching testing
-xtest('34 divisible by 10, to equal false', () => {
+it('34 divisible by 10, to equal false', () => {
     expect(isMultiplierOf10(34)).toBe(false);
 });
