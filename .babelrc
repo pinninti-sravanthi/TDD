@@ -1,0 +1,12 @@
+{
+    "presets": [
+      ["env", {
+        "targets": {
+          "chrome":"67"
+        },
+        "loose" : true,
+        "modules": "umd"
+      }]
+    ],
+    "plugins": ["transform-object-rest-spread"]
+  }

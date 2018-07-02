@@ -21,6 +21,7 @@ let browserConfig = {
   })],
   entry: {},
   output: {
+    libraryTarget: 'umd', //Remove this if you don't need UMD modules.
     filename: "[name].js",
     sourceMapFilename: "[name].map",
     publicPath: "/",
@@ -39,7 +40,7 @@ let browserConfig = {
                       "chrome": 52,
                       "browsers": ["last 2 versions", "safari 7"]
                     },
-                    "modules": false,
+                    "modules": "umd",
                     "useBuiltIns": true,
                     "loose": true,
                     "debug": false
@@ -71,13 +72,7 @@ let browserConfig = {
     new BundleAnalyzerPlugin({
         analyzerMode: 'static'
     }),
-    new HardSourceWebpackPlugin({}),
-    new webpack.ProvidePlugin({
-      $: 'jquery',
-      jQuery: 'jquery',
-      'window.jQuery': 'jquery',
-      'window.$': 'jquery',
-    })
+    new HardSourceWebpackPlugin({})
   ],
   devtool: false
 };
