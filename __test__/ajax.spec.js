@@ -1,4 +1,4 @@
-const $ = require('jquery');
+require('./setup-lib-deps');
 const { getRequest, printHelloWorld } = require('../src/ajax');
 
 describe('Ajax calls and mock test ', function(){

@@ -1,5 +1,4 @@
-const $ = require('jquery');
-
+require('./setup-lib-deps');
 describe('DOM test cases examples ', function(){
     beforeAll(function(){
         // NOTE: After dom is initialized only, we have to setup event handlers or else it won't register

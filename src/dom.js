@@ -1,4 +1,3 @@
-const $ = require('jquery');
 function hideUsername(){
     $('#username').hide();
 }

@@ -1,4 +1,3 @@
-const $ = require('jquery');
 function getRequest(url){
     return $.get(url);
 }
